@@ -273,6 +273,7 @@ static Class class_JsonLiteNumberToken;
         jsonlite_buffer buffer = jsonlite_heap_buffer_init(bufferMemory);
         jp = jsonlite_parser_init(parserMemory, size, buffer);
         internal->parser = jp;
+        internal->buffer = buffer;
         if (delegate != nil) {
             jsonlite_parser_callbacks cbs = JsonLiteParserCallbacks;
             cbs.context.client_state = internal;
